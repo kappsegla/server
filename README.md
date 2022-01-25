@@ -1,2 +1,3 @@
+[![GitHub release](https://img.shields.io/github/release/docker/login-action.svg?style=flat-square)](https://github.com/kappsegla/server/releases/latest)
 ![dependabot status](https://img.shields.io/badge/dependabot-enabled-025e8c?logo=Dependabot)
 [![Java CI with Maven](https://github.com/kappsegla/server/actions/workflows/maven.yml/badge.svg)](https://github.com/kappsegla/server/actions/workflows/maven.yml)
