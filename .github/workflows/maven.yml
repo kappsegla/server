@@ -21,12 +21,10 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Get the version
-      id: get_version
-      run: echo ::set-output name=tag::${GITHUB_REF/refs\/tags\//}
+    - uses: olegtarasov/get-tag@v2.1.1
     - name: Build Docker image
-      run: docker build --tag kappsegla/test:${{ steps.get_version.outputs.tag }} .
+      run: docker build --tag kappsegla/test:$GIT_TAG_NAME .
     - name: Push Docker image
       run: |
         docker login -u ${{github.DOCKER_NAME}} -p ${{github.DOCKER_TOKEN}}
-        docker push kappsegla/test:${{ steps.get_version.outputs.tag }}
+        docker push kappsegla/test:$GIT_TAG_NAME
