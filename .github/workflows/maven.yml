@@ -23,7 +23,7 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Get the version
       id: get_version
-      run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
+      run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
     - name: Build Docker image
       run: docker build --tag kappsegla/test:${{ steps.get_version.outputs.VERSION }} .
     - name: Push Docker image
