@@ -31,5 +31,3 @@ jobs:
         password: ${{ secrets.DOCKER_TOKEN }}
     - name: Push Docker image
       run: docker push kappsegla/test:$GIT_TAG_NAME
-    - name: Post Login to Docker Hub
-      run: docker logout
