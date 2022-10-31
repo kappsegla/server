@@ -21,7 +21,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - uses: olegtarasov/get-tag@v2.1.1
+    - uses: olegtarasov/get-tag@v2.1.2
     - name: Build Docker image
       run: docker build --tag kappsegla/test:$GIT_TAG_NAME .
     - name: Login to Docker Hub
